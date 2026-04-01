@@ -1,6 +1,8 @@
 # web-chat-app
 Web chat App proyect for the "web applications I" subject taught by José Jesús Cabrera Pantoja teacher
 
+This is a chat application made by Vite as the front end
+
 ## Enlace de Figma:
 Diseño de baja fidelidad planeado.
 
