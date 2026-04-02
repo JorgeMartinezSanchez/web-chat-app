@@ -1,20 +1,17 @@
 import Handlebars from "handlebars";
 import type { Chat } from "../../interfaces/chat.interface";
-import { mockChats, mockMessages, mockUsers } from "../../data-test/mockup";
+import { mockChats, mockUsers } from "../../data-test/mockup";
 import type { User } from "../../interfaces/user.interface";
 import './chat-list.css';
 
 class ChatList extends HTMLElement{
-    private shadow: ShadowRoot;
 
     constructor(){
         super();
-        this.shadow = this.attachShadow({mode: "open"});
     }
 
     private render(){
-        this.shadow.innerHTML = `
-
+        this.innerHTML = `
             <div class="option-menu">
                 <button>+ Create new chat</button>
             </div>
@@ -38,7 +35,7 @@ class ChatList extends HTMLElement{
                 chatId: chat.id,
                 image: otherUser?.image || 'default-avatar.jpg',
                 displayName: otherUser?.displayUsername || otherUser?.name || 'Usuario',
-                lastMessage: lastMessage?.content || 'Sin mensajes',
+                lastMessage: lastMessage?.content || '',
                 unreadCount: chat.messages.filter(m => !m.seen && m.userId !== currentUserId).length
             };
         });
@@ -48,11 +45,13 @@ class ChatList extends HTMLElement{
             <div class="chat-card" data-chat-id="{{chatId}}">
                 <img src="./public/avatar_imgs/{{image}}" alt="{{displayName}}">
                 <div class="basic-data">
-                    <h6>{{displayName}}</h6>
-                    <p>{{lastMessage}}</p>
-                    {{#if unreadCount}}
-                        <span class="unread-badge">{{unreadCount}}</span>
-                    {{/if}}
+                    <h3>{{displayName}}</h3>
+                    <div class="text-container">
+                        <p class="last-message">{{lastMessage}}</p>
+                        {{#if unreadCount}}
+                            <span class="unread-badge">{{unreadCount}}</span>
+                        {{/if}}
+                    </div>
                 </div>
             </div>
             {{/each}}

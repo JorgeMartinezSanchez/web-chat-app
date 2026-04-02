@@ -1,74 +1,44 @@
 .option-menu {
-    padding: 15px;
-    border-bottom: 1px solid #ddd;
+    flex-direction: column;
 }
 
-.option-menu button {
-    width: 100%;
+.chat-card {
+    flex-direction: row;
+    align-items: center;
+    display: flex;
     padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
+    border-bottom: 1px solid #eee;
 }
 
-.option-menu button:hover {
-    background-color: #0056b3;
+.last-message {
+    font-size: 1rem;
+    color: #666;
 }
 
 .chat-list-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 10px;
 }
 
-.chat-card {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    position: relative;
-}
-
-.chat-card:hover {
-    background-color: #f5f5f5;
-}
-
-.chat-card img {
+img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    object-fit: cover;
+    margin-right: 10px;
 }
 
 .basic-data {
     flex: 1;
 }
 
-.basic-data h6 {
-    margin: 0 0 5px 0;
-    font-size: 16px;
-}
-
-.basic-data p {
-    margin: 0;
-    font-size: 14px;
-    color: #666;
-}
-
 .unread-badge {
-    background-color: #ff4444;
+    background: #25D366;
     color: white;
     border-radius: 50%;
     padding: 2px 6px;
     font-size: 12px;
-    min-width: 20px;
-    text-align: center;
+}
+
+.text-container{
+    flex-direction: row;
 }
