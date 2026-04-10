@@ -1,14 +1,5 @@
 import './style.css'
-import './blocks/home/home'
-import './blocks/chat-list/chat-list'
+import './routes'
 
-export type RouteModule = {
-    default?: string;
-    render?: () => string;
-};
-
-
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <home-menu></home-menu>
-`
+document.querySelector<HTMLDivElement>('#app')!.innerHTML = ``
 

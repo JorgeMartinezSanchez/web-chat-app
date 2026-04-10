@@ -11,12 +11,13 @@ class ChatList extends HTMLElement{
     }
 
     private render(){
+        const currentUser = JSON.parse(sessionStorage.getItem("currentUser") || "{}");
         this.innerHTML = `
             <div class="option-menu">
                 <button>+ Create new chat</button>
             </div>
             <div class="chat-list-container">
-                ${this.render_list(mockChats, 1, mockUsers)}
+                ${this.render_list(mockChats, currentUser.id, mockUsers)}
             </div>
         `;
     }

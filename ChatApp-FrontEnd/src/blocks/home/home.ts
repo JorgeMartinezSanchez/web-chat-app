@@ -1,4 +1,5 @@
 import './home.css';
+import './../chat-list/chat-list'
 
 class HomeMenu extends HTMLElement{
 
@@ -6,10 +7,11 @@ class HomeMenu extends HTMLElement{
         super();
     }
 
-    private render(){
+    private render(): void{
         this.innerHTML = `
             <div class="home-container">
                 <chat-list></chat-list>
+                <a href="/login" role="button" class="btn">Log out</a>
             </div>
         `;
     }
@@ -20,3 +22,5 @@ class HomeMenu extends HTMLElement{
 }
 
 customElements.define("home-menu", HomeMenu);
+
+export default `<home-menu></home-menu>`
